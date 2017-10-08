@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    let images = [#imageLiteral(resourceName: "swimming"), #imageLiteral(resourceName: "mountain"), #imageLiteral(resourceName: "girl"), #imageLiteral(resourceName: "skateboard") ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +22,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return images.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
-        cell.photoView.image = #imageLiteral(resourceName: "swimming")
+        cell.photoView.image = images[indexPath.row]
         return cell
     }
 }
