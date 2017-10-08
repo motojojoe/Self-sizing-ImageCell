@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let images = [#imageLiteral(resourceName: "swimming"), #imageLiteral(resourceName: "mountain"), #imageLiteral(resourceName: "girl"), #imageLiteral(resourceName: "skateboard") ]
+    let images = [#imageLiteral(resourceName: "swimming"), #imageLiteral(resourceName: "mountain"), #imageLiteral(resourceName: "girl"), #imageLiteral(resourceName: "skateboard"), #imageLiteral(resourceName: "swimming"), #imageLiteral(resourceName: "mountain"), #imageLiteral(resourceName: "girl"), #imageLiteral(resourceName: "skateboard")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
-        cell.photoView.image = images[indexPath.row]
+        cell.setImage(images[indexPath.row])
         return cell
     }
 }
