@@ -11,6 +11,7 @@ import UIKit
 class ImageCell: UITableViewCell {
 
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var photoAspect: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
